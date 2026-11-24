@@ -1,74 +1,54 @@
 <div align="center">
 
-<img src="assets/cover.svg" alt="Bruno Robô Day Trade — projeto experimental" width="100%">
+<img src="assets/cover.svg" width="100%" alt="MARKET AUTOMATION LAB — capa do projeto">
 
-# Bruno Robô Day Trade
-### Estudos de automação e análise de mercado
+# MARKET AUTOMATION LAB
+### PYTHON / API / DATA EXPERIMENTS
 
-Projeto experimental em Python, com uma estrutura inicial de API utilizando FastAPI. A ideia é explorar conceitos de análise de dados e automação aplicados ao mercado financeiro.
+Laboratório experimental em estágio inicial para estudar Python, APIs e automação aplicada a dados de mercado. A estrutura atual contém uma API mínima com FastAPI.
 
-[![Acessar repositório](https://img.shields.io/badge/REPOSITÓRIO-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/brunosg24/bruno-robo-day-trade)
+[![ABRIR REPOSITÓRIO](https://img.shields.io/badge/ABRIR_REPOSITÓRIO-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/brunosg24/bruno-robo-day-trade)
+
+![Project](https://img.shields.io/badge/PORTFÓLIO-BRUNO_S.-64748b?style=flat-square)
 
 </div>
 
 ---
 
-## ✦ Sobre o projeto
-O repositório está em fase inicial. Atualmente contém uma aplicação FastAPI mínima, arquivo de configuração e lista inicial de dependências. Recursos de análise técnica, modelos preditivos e gestão de risco são possibilidades de evolução, não funcionalidades implementadas nesta versão.
+## ✦ Visão do projeto
 
-## Estrutura atual
-```text
-bruno-robo-day-trade/
-├── backend/
-│   ├── app.py
-│   ├── config.py
-│   └── requirements.txt
-├── .env.example
-└── README.md
-```
+Laboratório experimental em estágio inicial para estudar Python, APIs e automação aplicada a dados de mercado. A estrutura atual contém uma API mínima com FastAPI.
 
-## Tecnologias e estudos
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+## ◈ Recursos / escopo
 
-- Python e FastAPI.
-- Fundamentos de análise de dados.
-- Estudos de visão computacional e machine learning.
+Aplicação FastAPI inicial e estrutura básica de configuração e dependências.
 
-## Executar localmente
+## ⌘ Tecnologias
+
+Python · FastAPI
+
+## ▶ Começar
+
 ```bash
 git clone https://github.com/brunosg24/bruno-robo-day-trade.git
 cd bruno-robo-day-trade
-python -m venv .venv
 ```
 
-Ative o ambiente virtual e instale as dependências:
-```bash
-# Windows
-.venv\Scripts\activate
+Crie um ambiente virtual, instale `backend/requirements.txt` e execute `uvicorn backend.app:app --reload` a partir da raiz do projeto.
 
-# Linux / macOS
-source .venv/bin/activate
+## 🧭 Próximos passos
 
-pip install -r backend/requirements.txt
-uvicorn backend.app:app --reload
-```
+- [ ] Evoluir a estrutura e os componentes do projeto.
+- [ ] Melhorar experiência em dispositivos móveis.
+- [ ] Documentar decisões técnicas e arquitetura.
+- [ ] Adicionar testes e validações conforme as funcionalidades forem implementadas.
 
-A API inicial fica disponível em http://127.0.0.1:8000.
+## ⚑ Status e transparência
 
-## Atenção: configuração e segurança
-O arquivo backend/config.py contém valores de exemplo e configurações de desenvolvimento. Antes de qualquer uso real, mova credenciais para variáveis de ambiente, substitua segredos de exemplo, desative o modo DEBUG e revise a configuração de segurança. Nunca publique chaves ou senhas reais.
-
-## Próximos passos
-- Organizar configurações por ambiente.
-- Criar testes automatizados para a API.
-- Definir e documentar os dados de entrada e saída.
-- Implementar módulos de análise de forma incremental.
-- Avaliar modelos com dados históricos e metodologia reproduzível.
-
-## Status
-**Em desenvolvimento — estrutura inicial.** Este projeto não fornece sinais de compra ou venda e não deve ser utilizado como ferramenta de decisão financeira.
+Ainda não implementa robô de operações, análise preditiva funcional ou execução de ordens. Revise configurações e nunca publique credenciais.
 
 <div align="center">
-Desenvolvido por **Bruno** · [GitHub](https://github.com/brunosg24)
+
+**BRUNO S.** · [GitHub](https://github.com/brunosg24)
+
 </div>
