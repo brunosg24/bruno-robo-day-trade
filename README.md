@@ -1,266 +1,74 @@
-# 🤖 Bruno Robô Day Trade - IA para Análise de Gráficos
+<div align="center">
 
-Sistema automatizado de inteligência artificial para análise de gráficos financeiros com previsão probabilística de movimentos de mercado para day trade.
+<img src="assets/cover.svg" alt="Bruno Robô Day Trade — projeto experimental" width="100%">
 
-## 📋 Descrição
+# Bruno Robô Day Trade
+### Estudos de automação e análise de mercado
 
-Um robô inteligente que:
-- ✅ Recebe prints de gráficos (TradingView, MetaTrader, etc.)
-- ✅ Analisa automaticamente com IA
-- ✅ Identifica padrões técnicos
-- ✅ Gera previsão probabilística do mercado
-- ✅ Recomenda pontos de entrada, stop e alvo
-- ✅ Calcula expectativa matemática
-- ✅ Aprende com cada operação
+Projeto experimental em Python, com uma estrutura inicial de API utilizando FastAPI. A ideia é explorar conceitos de análise de dados e automação aplicados ao mercado financeiro.
 
-## 🎯 Funcionalidades Principais
+[![Acessar repositório](https://img.shields.io/badge/REPOSITÓRIO-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/brunosg24/bruno-robo-day-trade)
 
-### 1️⃣ Análise de Imagens
-- Upload de prints de gráficos
-- Extração automática de indicadores
-- Reconhecimento de padrões (triângulo, bandeira, rompimento)
-- Identificação de suporte/resistência
-
-### 2️⃣ Análise Técnica Automática
-- **Tendência**: EMA 9, EMA 21, EMA 200
-- **Momentum**: RSI, MACD
-- **Volume**: Análise de volume institucional
-- **Volatilidade**: ATR e desvio padrão
-
-### 3️⃣ Motor de Previsão
-- Modelo Bayesiano adaptativo
-- Score multivariável com pesos estatísticos
-- Probabilidade de continuação
-- Nível de confiança
-
-### 4️⃣ Recomendação Operacional
-```
-📈 PREVISÃO: ALTA (71% de probabilidade)
-💰 Entrada: 128.450
-🛑 Stop: 128.120
-🎯 Alvo: 128.980
-📊 R/R: 1:2.1
-⚠️ Confiança: ALTA
-```
-
-### 5️⃣ Gestão de Risco
-- Risco fixo por operação (1%)
-- Ajuste dinâmico conforme performance
-- Filtro de drawdown
-- Filtro de horário e liquidez
-
-### 6️⃣ Aprendizado Contínuo
-- Registro de todas as análises
-- Backtesting automático
-- Recalibração semanal
-- Relatórios de performance
-
-## 🏗️ Arquitetura
-
-```
-bruno-robo-day-trade/
-├── backend/
-│   ├── app.py                 # FastAPI principal
-│   ├── config.py              # Configurações
-│   ├── requirements.txt        # Dependências
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── cnn_model.py       # Modelo CNN para análise
-│   │   └── bayesian_model.py  # Modelo Bayesiano
-│   ├── services/
-│   │   ├── image_analysis.py  # Análise de imagens
-│   │   ├── technical_analysis.py # Indicadores técnicos
-│   │   ├── score_calculator.py # Score multivariável
-│   │   ├── risk_manager.py    # Gestão de risco
-│   │   └── prediction_engine.py # Motor de previsão
-│   ├── database/
-│   │   ├── models.py          # Modelos SQLAlchemy
-│   │   └── db.py              # Conexão com BD
-│   └── routes/
-│       └── api.py             # Endpoints da API
-├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── index.js       # Home
-│   │   │   └── dashboard.js   # Dashboard
-│   │   ├── components/
-│   │   │   ├── UploadImage.js
-│   │   │   ├── ResultCard.js
-│   │   │   └── HistoryChart.js
-│   │   └── styles/
-│   ├── package.json
-│   └── .env.example
-├── docker-compose.yml
-├── Dockerfile
-├── .env.example
-└── README.md
-
-```
-
-## 🚀 Como Usar
-
-### 1. Instalação Local
-
-```bash
-# Clone o repositório
-git clone https://github.com/brunosg24/bruno-robo-day-trade.git
-cd bruno-robo-day-trade
-
-# Configure as variáveis de ambiente
-cp .env.example .env
-
-# Execute com Docker Compose
-docker-compose up -d
-```
-
-### 2. Usar a Aplicação
-
-1. Acesse: `http://localhost:3000`
-2. Upload a imagem do gráfico
-3. Clique em "Analisar"
-4. Receba a previsão instantaneamente
-
-## 📊 Exemplo de Saída
-
-```
-═════════════════════════════════════════════
-       🤖 BRUNO ROBÔ - ANÁLISE DE GRÁFICO
-═════════════════════════════════════════════
-
-📈 TENDÊNCIA DETECTADA: ALTA ⬆️
-
-🔍 INDICADORES:
-   ✅ EMA 9 (128.350) > EMA 21 (128.120) > EMA 200 (127.890)
-   ✅ RSI: 58 (Zona de compra ideal)
-   ✅ MACD: Positivo (cruzamento de alta)
-   ✅ Volume: +25% acima da média
-
-───────────────────────────────────────────
-
-📊 ANÁLISE MULTIFATORIAL:
-   • Tendência confirmada: 30/30 pts
-   • Pullback estruturado: 15/15 pts
-   • Volume forte: 20/20 pts
-   • RSI ideal: 10/10 pts
-   • Estrutura de mercado: 13/15 pts
-   
-   Score Final: 88/100 ✅ OPERAÇÃO VÁLIDA
-
-───────────────────────────────────────────
-
-🎯 PREVISÃO PROBABILÍSTICA:
-
-   Direção: ALTA ⬆️
-   Probabilidade: 71%
-   Confiança do modelo: ALTA
-
-───────────────────────────────────────────
-
-💰 RECOMENDAÇÃO OPERACIONAL:
-
-   Entrada: 128.450
-   Stop Loss: 128.120
-   Take Profit: 128.980
-   
-   Risco: 33 pontos (-330 em contrato)
-   Retorno: 70 pontos (+700 em contrato)
-   Risco/Retorno: 1:2.1 ✅ Favorável
-
-───────────────────────────────────────────
-
-⚠️ AVISOS IMPORTANTES:
-   • NÃO é garantia de lucro
-   • Sempre respeite stop loss
-   • Use gestão de risco (1% por trade)
-   • Sistema trabalha com probabilidade
-   • É ferramenta de apoio, não recomendação financeira
-
-═════════════════════════════════════════════
-```
-
-## 🧠 Estratégia Matemática
-
-### Score Multivariável
-
-```
-Score = (Tendência × 0.30) +
-         (Pullback × 0.15) +
-         (Volume × 0.20) +
-         (Delta × 0.10) +
-         (RSI × 0.10) +
-         (Estrutura × 0.15)
-
-Se Score ≥ 75 → Operação Válida
-```
-
-### Expectativa Matemática
-
-```
-E = (WinRate × RR) - (LossRate × 1)
-
-Meta: E > +0.50 (positivo)
-Win Rate esperado: 60-67%
-Profit Factor: 1.8-2.3
-```
-
-### Bayesiano Adaptativo
-
-```
-P(Ganho|Setup) = (Prior × Likelihood) / Evidence
-
-- Prior: taxa histórica do setup
-- Likelihood: performance dos últimos 30 trades
-- Evidence: normalização estatística
-```
-
-## 📈 Performance Esperada
-
-Com disciplina e filtro forte:
-- **Win Rate**: 60-67%
-- **Profit Factor**: 1.8-2.3
-- **Drawdown**: < 15%
-- **Expectativa Matemática**: +0.60-0.80 por unidade de risco
-
-## 🔐 Segurança e Avisos
-
-⚠️ **IMPORTANTE:**
-- Este sistema NÃO garante lucro
-- NÃO substitui gestão de risco
-- Trabalha com PROBABILIDADE estatística
-- É uma FERRAMENTA DE APOIO
-- NÃO é recomendação financeira
-
-## 📱 Requisitos
-
-- Python 3.9+
-- Node.js 16+
-- PostgreSQL 13+
-- Docker e Docker Compose
-
-## 🛠️ Tecnologias
-
-**Backend:**
-- FastAPI
-- PyTorch / TensorFlow
-- OpenCV
-- TA-Lib
-- SQLAlchemy
-- PostgreSQL
-
-**Frontend:**
-- React / Next.js
-- Axios
-- Chart.js
-- Tailwind CSS
-
-## 📝 Licença
-
-MIT
-
-## 👨‍💻 Autor
-
-Bruno SG24
+</div>
 
 ---
 
-**Desenvolvido com ❤️ para traders que buscam lucro consistente através de análise técnica profissional.
+## ✦ Sobre o projeto
+O repositório está em fase inicial. Atualmente contém uma aplicação FastAPI mínima, arquivo de configuração e lista inicial de dependências. Recursos de análise técnica, modelos preditivos e gestão de risco são possibilidades de evolução, não funcionalidades implementadas nesta versão.
+
+## Estrutura atual
+```text
+bruno-robo-day-trade/
+├── backend/
+│   ├── app.py
+│   ├── config.py
+│   └── requirements.txt
+├── .env.example
+└── README.md
+```
+
+## Tecnologias e estudos
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+
+- Python e FastAPI.
+- Fundamentos de análise de dados.
+- Estudos de visão computacional e machine learning.
+
+## Executar localmente
+```bash
+git clone https://github.com/brunosg24/bruno-robo-day-trade.git
+cd bruno-robo-day-trade
+python -m venv .venv
+```
+
+Ative o ambiente virtual e instale as dependências:
+```bash
+# Windows
+.venv\Scripts\activate
+
+# Linux / macOS
+source .venv/bin/activate
+
+pip install -r backend/requirements.txt
+uvicorn backend.app:app --reload
+```
+
+A API inicial fica disponível em http://127.0.0.1:8000.
+
+## Atenção: configuração e segurança
+O arquivo backend/config.py contém valores de exemplo e configurações de desenvolvimento. Antes de qualquer uso real, mova credenciais para variáveis de ambiente, substitua segredos de exemplo, desative o modo DEBUG e revise a configuração de segurança. Nunca publique chaves ou senhas reais.
+
+## Próximos passos
+- Organizar configurações por ambiente.
+- Criar testes automatizados para a API.
+- Definir e documentar os dados de entrada e saída.
+- Implementar módulos de análise de forma incremental.
+- Avaliar modelos com dados históricos e metodologia reproduzível.
+
+## Status
+**Em desenvolvimento — estrutura inicial.** Este projeto não fornece sinais de compra ou venda e não deve ser utilizado como ferramenta de decisão financeira.
+
+<div align="center">
+Desenvolvido por **Bruno** · [GitHub](https://github.com/brunosg24)
+</div>
